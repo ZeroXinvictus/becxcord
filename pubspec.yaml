@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
-  ionicons: ^2.0.1
+  ionicons: ^0.2.3
   video_player: ^2.9.2
 
 dev_dependencies:
