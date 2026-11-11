@@ -1,0 +1,5 @@
+<resources>
+    <string name="bubble_pause">PAUSE</string>
+    <string name="bubble_resume">RESUME</string>
+    <string name="bubble_stop">STOP</string>
+</resources>
