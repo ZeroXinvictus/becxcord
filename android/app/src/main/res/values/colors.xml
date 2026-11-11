@@ -1,0 +1,5 @@
+<resources>
+    <color name="bexxcord_icon_background">#0A0A0A</color>
+    <color name="bexxcord_icon_accent">#EF4444</color>
+    <color name="bexxcord_icon_foreground">#F2F5FA</color>
+</resources>
