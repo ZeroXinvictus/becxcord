@@ -90,7 +90,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
           borderRadius: BorderRadius.circular(AppRadii.md),
           border: Border.all(color: AppColors.line),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             'OPENING STREAM',
             style: AppText.mono(size: 12, color: AppColors.textMuted, spacing: 2),
@@ -241,10 +241,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
         children: [
           const SectionHeader(label: 'SESSION SUMMARY'),
           _buildDetailRow('RESOLUTION', '${entry.width}x${entry.height}'),
-          _buildDetailRow(
-            'FRAME RATE',
-            entry.fps == 0 ? 'N/A' : '${entry.fps} FPS',
-          ),
           _buildDetailRow('DURATION', _formatClock(Duration(milliseconds: entry.durationMs))),
           _buildDetailRow('SIZE', _formatBytes(entry.sizeBytes)),
           _buildDetailRow('VIDEO CODEC', entry.codecTag.toUpperCase()),
