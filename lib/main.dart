@@ -22,8 +22,8 @@ class BexxCordApp extends StatelessWidget {
         theme: AppTheme.dark(),
         initialRoute: '/',
         routes: {
-          '/': const HomeScreen(),
-          '/library': const LibraryScreen(),
+          '/': (context) => const HomeScreen(),
+          '/library': (context) => const LibraryScreen(),
         },
         onGenerateRoute: AppRoutes.onGenerateRoute,
       ),
