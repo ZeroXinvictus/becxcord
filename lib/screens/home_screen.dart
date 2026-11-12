@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               'BexxCord',
-              style: AppText.mono(size: 18, weight: FontWeight.w800, letterSpacing: 1),
+              style: AppText.mono(size: 18, weight: FontWeight.w800, spacing: 1),
             ),
             Text(
               'screen + audio recorder',
@@ -207,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
         const Spacer(),
         IconButton(
           tooltip: 'Open library',
-          icon: const Icon(Ionicons.folder_open_outline, color: AppColors.textMuted),
+          icon: const Icon(Ionicons.folderOpenOutline, color: AppColors.textMuted),
           onPressed: () => Navigator.of(context).pushNamed('/library'),
         ),
       ],
@@ -286,50 +286,50 @@ class _HomeScreenState extends State<HomeScreen> {
       runSpacing: AppSpacing.sm,
       children: [
         CapabilityChip(
-          icon: Ionicons.hardware_chip_outline,
+          icon: Ionicons.hardwareChipOutline,
           label: 'API',
           value: '${capabilities.apiLevel}',
           state: CapabilityState.ok,
         ),
         CapabilityChip(
-          icon: Ionicons.videocam_outline,
+          icon: Ionicons.videocamOutline,
           label: 'H264',
           value: capabilities.h264Encoder != null ? 'HW' : 'missing',
           state: capabilities.h264Encoder != null ? CapabilityState.ok : CapabilityState.off,
         ),
         CapabilityChip(
-          icon: Ionicons.film_outline,
+          icon: Ionicons.filmOutline,
           label: 'H265',
           value: capabilities.h265Encoder != null ? 'HW' : 'n/a',
           state: capabilities.h265Encoder != null ? CapabilityState.ok : CapabilityState.off,
         ),
         CapabilityChip(
-          icon: Ionicons.volume_high_outline,
+          icon: Ionicons.volumeHighOutline,
           label: 'SYS AUDIO',
           value: capabilities.systemPlaybackSupported ? 'capture' : 'n/a',
           state: capabilities.systemPlaybackSupported ? CapabilityState.ok : CapabilityState.off,
         ),
         CapabilityChip(
-          icon: Ionicons.mic_outline,
+          icon: Ionicons.micOutline,
           label: 'MIC',
           value: capabilities.microphoneSupported ? 'ready' : 'missing',
           state: capabilities.microphoneSupported ? CapabilityState.ok : CapabilityState.off,
         ),
         CapabilityChip(
-          icon: Ionicons.phone_portrait_outline,
+          icon: Ionicons.phonePortraitOutline,
           label: 'OVERLAY',
           value: capabilities.overlayPermissionGranted ? 'granted' : 'off',
           state: capabilities.overlayPermissionGranted ? CapabilityState.ok : CapabilityState.warn,
           onTap: capabilities.overlayPermissionGranted ? null : controller.openOverlaySettings,
         ),
         CapabilityChip(
-          icon: Ionicons.notifications_outline,
+          icon: Ionicons.notificationsOutline,
           label: 'NOTIFY',
           value: capabilities.notificationPermissionGranted ? 'granted' : 'off',
           state: capabilities.notificationPermissionGranted ? CapabilityState.ok : CapabilityState.warn,
         ),
         CapabilityChip(
-          icon: Ionicons.save_outline,
+          icon: Ionicons.saveOutline,
           label: 'STORAGE',
           value: capabilities.freeStorageBytes <= 0
               ? 'unknown'
@@ -400,7 +400,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: AppSpacing.md),
           _buildAudioToggle(
-            icon: Ionicons.mic_outline,
+            icon: Ionicons.micOutline,
             label: 'MICROPHONE',
             value: _micEnabled,
             available: capabilities.microphoneSupported,
@@ -410,7 +410,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           _buildAudioToggle(
-            icon: Ionicons.volume_high_outline,
+            icon: Ionicons.volumeHighOutline,
             label: 'SYSTEM AUDIO',
             value: _systemAudioEnabled,
             available: capabilities.systemPlaybackSupported,
@@ -430,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildCountdownToggle(RecorderController controller) {
     return Row(
       children: [
-        const Icon(Ionicons.timer_outline, size: 16, color: AppColors.textMuted),
+        const Icon(Ionicons.timerOutline, size: 16, color: AppColors.textMuted),
         const SizedBox(width: AppSpacing.sm),
         Expanded(
           child: Column(
@@ -484,7 +484,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   value: value,
                   isExpanded: true,
                   icon: const Icon(
-                    Ionicons.chevron_down_outline,
+                    Ionicons.chevronDownOutline,
                     color: AppColors.textMuted,
                     size: 14,
                   ),
@@ -585,7 +585,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (busy) {
       return const PrimaryAction(
         label: 'WORKING',
-        icon: Ionicons.loader_outline,
+        icon: Ionicons.syncOutline,
         onTap: null,
         enabled: false,
         tone: ActionTone.neutral,
@@ -596,14 +596,14 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           PrimaryAction(
             label: 'PAUSE',
-            icon: Ionicons.pause_outline,
+            icon: Ionicons.pauseOutline,
             tone: ActionTone.neutral,
             onTap: controller.pauseRecording,
           ),
           const SizedBox(height: AppSpacing.sm),
           PrimaryAction(
             label: 'STOP',
-            icon: Ionicons.stop_outline,
+            icon: Ionicons.stopOutline,
             tone: ActionTone.danger,
             onTap: controller.stopRecording,
           ),
@@ -615,13 +615,13 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           PrimaryAction(
             label: 'RESUME',
-            icon: Ionicons.play_outline,
+            icon: Ionicons.playOutline,
             onTap: controller.resumeRecording,
           ),
           const SizedBox(height: AppSpacing.sm),
           PrimaryAction(
             label: 'STOP',
-            icon: Ionicons.stop_outline,
+            icon: Ionicons.stopOutline,
             tone: ActionTone.danger,
             onTap: controller.stopRecording,
           ),
@@ -631,8 +631,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return PrimaryAction(
       label: controller.projectionReady ? 'START RECORDING' : 'GRANT CAPTURE ACCESS',
       icon: controller.projectionReady
-          ? Ionicons.recording_outline
-          : Ionicons.shield_checkmark_outline,
+          ? Ionicons.recordingOutline
+          : Ionicons.shieldCheckmarkOutline,
       onTap: () => _onStartTapped(controller, config),
     );
   }
@@ -672,7 +672,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Row(
             children: [
-              const Icon(Ionicons.checkmark_circle_outline, color: AppColors.ok, size: 18),
+              const Icon(Ionicons.checkmarkCircleOutline, color: AppColors.ok, size: 18),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 'SAVED',
@@ -708,7 +708,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Row(
             children: [
-              const Icon(Ionicons.alert_circle_outline, color: AppColors.accent, size: 18),
+              const Icon(Ionicons.alertCircleOutline, color: AppColors.accent, size: 18),
               const SizedBox(width: AppSpacing.sm),
               Text(
                 state.code,
@@ -736,7 +736,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Row(
         children: [
-          const Icon(Ionicons.warning_outline, color: AppColors.warn, size: 18),
+          const Icon(Ionicons.warningOutline, color: AppColors.warn, size: 18),
           const SizedBox(width: AppSpacing.sm),
           Expanded(
             child: Text(
