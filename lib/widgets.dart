@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'services/recorder_service.dart';
@@ -282,7 +280,6 @@ class _PrimaryActionState extends State<PrimaryAction> {
         onTapUp: (_) => setState(() => _pressed = false),
         onTapCancel: () => setState(() => _pressed = false),
         onTap: widget.enabled ? widget.onTap : null,
-      )
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 120),
           curve: Curves.easeOut,
