@@ -93,7 +93,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
         child: const Center(
           child: Text(
             'OPENING STREAM',
-            style: AppText.mono(size: 12, color: AppColors.textMuted, letterSpacing: 2),
+            style: AppText.mono(size: 12, color: AppColors.textMuted, spacing: 2),
           ),
         ),
       );
@@ -107,7 +107,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
           border: Border.all(color: AppColors.accent),
         ),
         child: EmptyState(
-          icon: Ionicons.alert_circle_outline,
+          icon: Ionicons.alertCircleOutline,
           title: 'Playback failed',
           subtitle: _error ?? 'This file cannot be decoded on this device.',
         ),
@@ -175,8 +175,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
                   height: 48,
                   label: _controller.value.isPlaying ? 'PAUSE' : 'PLAY',
                   icon: _controller.value.isPlaying
-                      ? Ionicons.pause_outline
-                      : Ionicons.play_outline,
+                      ? Ionicons.pauseOutline
+                      : Ionicons.playOutline,
                   tone: ActionTone.neutral,
                   onTap: () {
                     if (_controller.value.isPlaying) {
@@ -190,7 +190,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 PrimaryAction(
                   height: 48,
                   label: _capturing ? 'CAPTURING FRAME' : 'CAPTURE FRAME',
-                  icon: Ionicons.camera_outline,
+                  icon: Ionicons.cameraOutline,
                   tone: ActionTone.accent,
                   onTap: _capturing ? null : _onCaptureFrame,
                 ),
@@ -270,7 +270,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
             width: 130,
             child: Text(
               label,
-              style: AppText.mono(size: 10, color: AppColors.textMuted, letterSpacing: 1),
+              style: AppText.mono(size: 10, color: AppColors.textMuted, spacing: 1),
             ),
           ),
           Expanded(
