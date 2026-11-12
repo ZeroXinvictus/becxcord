@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.bexxcord.app"
-    compileSdk = 35
+    compileSdk = 36
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId = "com.bexxcord.app"
         minSdk = 29
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.0"
     }
