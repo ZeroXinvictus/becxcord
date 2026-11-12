@@ -33,12 +33,12 @@ class _LibraryScreenState extends State<LibraryScreen> {
       appBar: AppBar(
         title: Text(
           'LIBRARY',
-          style: AppText.mono(size: 14, weight: FontWeight.w800, letterSpacing: 2),
+          style: AppText.mono(size: 14, weight: FontWeight.w800, spacing: 2),
         ),
         actions: [
           IconButton(
             tooltip: 'Refresh library',
-            icon: const Icon(Ionicons.refresh_outline, color: AppColors.textMuted),
+            icon: const Icon(Ionicons.refreshOutline, color: AppColors.textMuted),
             onPressed: controller.refreshRecordings,
           ),
         ],
@@ -46,7 +46,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
       body: SafeArea(
         child: recordings.isEmpty
             ? const EmptyState(
-                icon: Ionicons.folder_open_outline,
+                icon: Ionicons.folderOpenOutline,
                 title: 'No recordings',
                 subtitle:
                     'Finished sessions are saved to Movies/BexxCord and indexed here automatically.',
@@ -117,12 +117,12 @@ class _RecordingTile extends StatelessWidget {
                 ),
                 IconButton(
                   tooltip: 'Rename recording',
-                  icon: const Icon(Ionicons.create_outline, color: AppColors.textMuted, size: 18),
+                  icon: const Icon(Ionicons.createOutline, color: AppColors.textMuted, size: 18),
                   onPressed: () => _showRenameDialog(context, controller),
                 ),
                 IconButton(
                   tooltip: 'Delete recording',
-                  icon: const Icon(Ionicons.trash_outline, color: AppColors.accent, size: 18),
+                  icon: const Icon(Ionicons.trashOutline, color: AppColors.accent, size: 18),
                   onPressed: () => _showDeleteDialog(context, controller),
                 ),
               ],
@@ -141,7 +141,7 @@ class _RecordingTile extends StatelessWidget {
     final result = await showDialog<String>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text('RENAME', style: AppText.mono(size: 13, weight: FontWeight.w800, letterSpacing: 2)),
+        title: Text('RENAME', style: AppText.mono(size: 13, weight: FontWeight.w800, spacing: 2)),
         content: TextField(
           controller: textController,
           autofocus: true,
@@ -182,7 +182,7 @@ class _RecordingTile extends StatelessWidget {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        title: Text('DELETE', style: AppText.mono(size: 13, weight: FontWeight.w800, letterSpacing: 2)),
+        title: Text('DELETE', style: AppText.mono(size: 13, weight: FontWeight.w800, spacing: 2)),
         content: Text(
           'Permanently delete ${entry.title}? This cannot be undone.',
           style: AppText.mono(size: 12, color: AppColors.textMuted),
