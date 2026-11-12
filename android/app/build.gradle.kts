@@ -13,10 +13,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     defaultConfig {
         applicationId = "com.bexxcord.app"
         minSdk = 29
@@ -30,6 +26,12 @@ android {
             signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
