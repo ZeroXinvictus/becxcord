@@ -369,7 +369,7 @@ class ErrorBanner extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Ionicons.alert_circle_outline, color: AppColors.accent, size: 18),
+          const Icon(Ionicons.alertCircleOutline, color: AppColors.accent, size: 18),
           const SizedBox(width: AppSpacing.sm),
           Expanded(
             child: Text(
@@ -379,7 +379,7 @@ class ErrorBanner extends StatelessWidget {
           ),
           if (onDismiss != null)
             IconButton(
-              icon: const Icon(Ionicons.close_outline, color: AppColors.textMuted, size: 16),
+              icon: const Icon(Ionicons.closeOutline, color: AppColors.textMuted, size: 16),
               onPressed: onDismiss,
               tooltip: 'Dismiss error',
             ),
@@ -437,7 +437,7 @@ class _RecordingThumbnailState extends State<RecordingThumbnail> {
       child: _bytes == null
           ? Center(
               child: Icon(
-                _loaded ? Ionicons.film_outline : Ionicons.hourglass_outline,
+                _loaded ? Ionicons.filmOutline : Ionicons.hourglassOutline,
                 color: _loaded ? AppColors.textFaint : AppColors.textMuted,
                 size: 18,
               ),
