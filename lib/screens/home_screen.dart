@@ -46,9 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
     final maxW = capabilities.displayWidth;
     final maxH = capabilities.displayHeight;
     final candidates = <ResolutionOption>[
-      ResolutionOption(1920, 1080),
-      ResolutionOption(1280, 720),
-      ResolutionOption(854, 480),
+      const ResolutionOption(1920, 1080),
+      const ResolutionOption(1280, 720),
+      const ResolutionOption(854, 480),
     ];
     if (maxW >= capabilities.displayWidth && maxH >= capabilities.displayHeight) {
       candidates.insert(
@@ -778,12 +778,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )
         else
-          for (final entry in recent) _buildRecordingTile(context, entry),
+          for (final entry in recent) _buildRecordingTile(context, controller, entry),
       ],
     );
   }
 
-  Widget _buildRecordingTile(BuildContext context, RecordingEntry entry) {
+  Widget _buildRecordingTile(BuildContext context, RecorderController controller, RecordingEntry entry) {
     return Padding(
       padding: const EdgeInsets.only(bottom: AppSpacing.sm),
       child: Semantics(
@@ -882,7 +882,7 @@ class _CountdownDialogState extends State<_CountdownDialog> {
         borderRadius: BorderRadius.circular(AppRadii.md),
         side: const BorderSide(color: AppColors.line),
       ),
-      child: Column(
+      content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
