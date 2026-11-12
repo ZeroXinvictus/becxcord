@@ -147,10 +147,11 @@ class AppTheme {
         thumbColor: AppColors.textPrimary,
         overlayColor: AppColors.accentGlow,
       ),
-      switchTheme: const SwitchThemeData(
-        thumbColor: WidgetStatePropertyAll(AppColors.textPrimary),
-        trackColor: WidgetStatePropertyAll(AppColors.line),
-        activeTrackColor: WidgetStatePropertyAll(AppColors.accent),
+      switchTheme: SwitchThemeData(
+        thumbColor: const WidgetStatePropertyAll(AppColors.textPrimary),
+        trackColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected) ? AppColors.accent : AppColors.line,
+        ),
       ),
     );
   }
